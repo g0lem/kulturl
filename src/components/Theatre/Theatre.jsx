@@ -8,7 +8,8 @@ export default class Theatre extends React.Component {
         super(props);
 
         this.state = {
-            theaterPlaysByDays: [],
+            theaterPlaysByDays: ['da'],
+            day: 0,
         }
     }
 
@@ -18,17 +19,52 @@ export default class Theatre extends React.Component {
                 const data = await res.json();
                 const dataWithReplacedLetters = JSON.stringify(data).replaceAll('ă','ȁ')
                 const { output } = JSON.parse(dataWithReplacedLetters);
+                console.log(output);
                 this.setState({theaterPlaysByDays: output});
             })
     }
 
+    getCurrentDay = () => {
+        const days = this.state?.theaterPlaysByDays;
+        const dayIndex = this.state?.day;
+
+        if(dayIndex >= days.length) {
+            return {};
+        }
+
+        return days[dayIndex];
+    }
+    getDayDate = () => {
+        
+        return this.getCurrentDay()?.info?.data;
+    }
+
+    changeDay = (add) => {
+        const days = this.state?.theaterPlaysByDays;
+
+        if(this.state.day + add >= days.length || this.state.day + add < 0) {
+            return;
+        }
+
+        this.setState({day: this.state.day + add});
+    }
+
     render() {
         return <>
-            {
-                this.state?.theaterPlaysByDays?.map(day=> {
-                    return <Day {...day}/>
-                })
-            }
+            <h1 onClick={this.openDatePicker}>
+                <span onClick={()=>this.changeDay(-1)}
+                    style={{cursor: 'pointer'}}> 
+                    {'<<   '}
+                </span>
+                {
+                    this.getDayDate()
+                }
+                <span onClick={()=>this.changeDay(1)}
+                    style={{cursor: 'pointer'}}> 
+                    {'   >>'}
+                </span>
+            </h1>
+            <Day {...this.getCurrentDay()}/>
         </>
     }
 

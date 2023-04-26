@@ -8,13 +8,15 @@ export default class Day extends React.Component {
     constructor(props){
         super(props);
 
-        console.log(props);
+        this.inputRef = React.createRef();
+    }
 
+    openDatePicker = () => {
+        this.inputRef.current.select();
     }
 
     render() {
         return <div className="dayContainer">
-            <h1>{this.props?.info?.data}</h1>
             {
                 this.props?.shows?.map(show=> {
                     return <Show {...show}/>

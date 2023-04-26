@@ -17,10 +17,14 @@ body {
   font-weight: 700;
                                                 
 }
+button {
+  font-family: 'Stardos Stencil', sans-serif;
+}
 
 a {
   color: var(--link-color);
   text-decoration: none;
+  font-family: 'Stardos Stencil', sans-serif;
 }
 
 h1 {
@@ -39,11 +43,6 @@ h1 {
   color: var(--text-highlight-color);
 }
 
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -77,6 +76,8 @@ h1 {
 
 .showContainer {
   display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   background-color:  #4F4557;
   border: solid;
   border-color: var(--text-color);
@@ -85,6 +86,7 @@ h1 {
   margin-bottom: 4em;
   border-radius: 2em;
   padding: 2em;
+  flex-wrap: wrap;
   /* box-shadow: 10px 8px 10px 5px var(--text-color); */
 }
 
@@ -97,8 +99,68 @@ h1 {
   align-items: center;
   padding-left: 2em;
   padding-right: 2em;
+  flex-wrap: wrap;
 }
 
 .dayContainer {
 
+}
+
+.routerButton, .movieContainer {
+  background-color: #4F4557;
+  border-radius: 10px;
+  font-size: 2em;
+  border-color: var(--link-color);
+  color: var(--link-color);
+  cursor: pointer;
+  max-width: 90vw;
+}
+
+.readMoreButton {
+  background-color: var(--text-highlight-color);
+  border-radius: 10px;
+  font-size: 1em;
+  padding: 1em;
+  border-color: var(--text-highlight-color);
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.routerButton:hover {
+  background-color: var(--main-bg-color);
+}
+
+.routerButton.routerButton{
+  margin-left: 1em;
+}
+
+.routerButton~.routerButton {
+  margin-right: 1em;
+}
+
+.moviesContainer {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.movieContainer {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+a > h1 {
+  color: var(--link-color);
+}
+
+input[type=date] {
+  background-color: var(--main-bg-color);
+  color: var(--text-highlight-color)
+}
+
+.showDetails {
+  color: var(--link-color)
 }

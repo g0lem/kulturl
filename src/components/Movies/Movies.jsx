@@ -17,19 +17,17 @@ export default class Movies extends React.Component {
             .then(async (res)=> {
                 const data = await res.json();
                 const { posters } = data?.body;
-                console.log(posters)
                 this.setState({movies: posters || []});
             })
     }
 
     render() {
-        return <>
-            Cinema, pplm...
+        return <div className="moviesContainer">
             {this.state.movies.map(movie=> {
                 return <Movie {...movie}/>
             })}
 
-        </>
+        </div>
     }
 
 }
