@@ -2,6 +2,44 @@
   text-align: center;
 }
 
+:root {
+  --main-bg-color: #393646;
+  --text-color: #F4EEE0;
+  --text-highlight-color: #F45050;
+  --link-color: #F9D949;
+}
+
+
+body {
+  background-color: var(--main-bg-color);
+  color: var(--text-color);
+  font-family: 'Stardos Stencil', sans-serif;
+  font-weight: 700;
+                                                
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+h1 {
+  color: var(--text-highlight-color);
+}
+
+.App > h1 {
+  color: var(--link-color);
+}
+
+.App > h1 img {
+  margin-bottom: -0.75em;
+}
+
+.App > h1 > span {
+  color: var(--text-highlight-color);
+}
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -14,7 +52,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #4F4557;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +73,32 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.showContainer {
+  display: flex;
+  background-color:  #4F4557;
+  border: solid;
+  border-color: var(--text-color);
+  margin-left: 2em;
+  margin-right: 2em;
+  margin-bottom: 4em;
+  border-radius: 2em;
+  padding: 2em;
+  /* box-shadow: 10px 8px 10px 5px var(--text-color); */
+}
+
+
+
+.showContainer > div {
+  display: flex;
+  justify-content: center;
+  height: inherit;
+  align-items: center;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.dayContainer {
+
 }

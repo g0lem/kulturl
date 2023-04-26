@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import Theatre from './components/Theatre/Theatre';
+import Movies from './components/Movies/Movies';
+import logo from './logo.png';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>
+        Kult
+        <span clasName="firstSpan">
+          ur
+        </span>
+        <img height="50" src={logo}/>
+        <span clasName="secondSpan">
+        l
+        </span>
+      </h1>
+      <Theatre/>
+      {/* <Movies/> */}
     </div>
   );
 }
